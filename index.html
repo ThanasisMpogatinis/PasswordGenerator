@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Random Password</title>
+
+    <script src="passwordGenerator.js"></script>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+    <link href="helpers/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="cover.css" rel="stylesheet">
+  </head>
+
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <div class="password-container mx-auto w-100">
+        <h1 class="password" id="password">---------------</h1>
+        <button type="button" class="copyButton btn btn-outline-primary shadow-none" id="copyButton" onclick="copyToClipBoard()">copy</button>
+        <div class="password-info mx-auto row align-items-start w-25">
+          <div class="col col-4 col-sm-4">
+            <p class="lead" id="passwordStrength"></p>
+          </div>
+          <div class="col col-8 col-sm-8">
+            <p class="lead" id="passwordCrackTime"></p>
+          </div>
+        </div>
+        <div class="rangeContainer w-100">
+          <label for="customRange2" class="form-label">password length:</label> <output id="passwordLengthRange">11</output> <br>
+          <input type="range" class="form-range w-25" min="4" max="18"  oninput="this.previousElementSibling.previousElementSibling.value = this.value">
+        </div>
+        <div class="checkboxesContainer">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input shadow-none" type="checkbox" value="" id="numbersCheckBox" onclick="checkBoxesActive()" checked>
+            <label class="form-check-label" for="numbersCheckBox">
+              numbers
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input shadow-none" type="checkbox" value="" id="lettersCheckBox" onclick="checkBoxesActive()">
+            <label class="form-check-label" for="lettersCheckBox">
+              letters
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input shadow-none" type="checkbox" value="" id="specialCharsCheckBox" onclick="checkBoxesActive()">
+            <label class="form-check-label" for="specialCharsCheckBox">
+              special chars
+            </label>
+          </div>
+        </div>
+        <div class="generateButtonContainer">
+          <button type="button" class="btn btn-lg btn-primary shadow-none"  id="generateButton" onclick="generate()">Generate</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
